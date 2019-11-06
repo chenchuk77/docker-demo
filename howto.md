@@ -8,12 +8,14 @@
 1. Create ec2 instance (vm) using aws-cli
 
 ```
+# setup local variables
 AMI=ami-02df9ea15c1778c9c
 TYPE=t3.medium
 KEY=dev_access_key
 SUBNET=subnet-db6bf992
 SECURITY_GROUP=sg-0dd8b70438998c681
 
+# invoke ec2 request to create instance
 aws ec2 run-instances --count 1 \
     --image-id ${AMI} \
     --instance-type ${TYPE} \
@@ -48,19 +50,23 @@ root@ip-10-29-16-253:~# systemctl restart sshd.service
 
 ```
 root@ip-10-29-16-253:~# git clone https://github.com/chenchuk77/docker-demo.git
-
-ss
+root@ip-10-29-16-253:~# cd docker-demo
+root@ip-10-29-16-253:~/docker-demo# ./make-users.sh avi eli ran
+creating user: avi
+creating user: eli
+creating user: ran
+done.
+root@ip-10-29-16-253:~/docker-demo#
 ```
 
-#ssh to server and enable password access via ssh
+5. Try login as different user with simple password (1234)
 
-
-ubuntu@ip-10-29-16-253:~$ sudo useradd -m -p 1234 -s /bin/bash momo
-
-root@ip-10-29-16-253:~#
-root@ip-10-29-16-253:~# echo "momo1:1234" | chpasswd
-root@ip-10-29-16-253:~#
-root@ip-10-29-16-253:~#
-root@ip-10-29-16-253:~#
-root@ip-10-29-16-253:~# echo "momo:1234" | chpasswd
+```
+root@ip-10-29-16-253:~/docker-demo# exit    # exit from root session
+ubuntu@ip-10-29-16-253:~$ exit              # exit from ec2 vm
+Connection to 54.194.95.172 closed.
+$ ssh eli@54.194.95.172                     # login as different user
+eli@54.194.95.172's password:               # 1234
+eli@ip-10-29-16-253:~$
+```
 
