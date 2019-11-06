@@ -8,6 +8,11 @@
 # $ ./make-users.sh avi eli ran
 #
 
+if [ $# -eq 0 ]; then
+    echo "users not provided."
+    exit 1
+fi
+
 for user in "$@"; do
   echo "creating user: $user"
   sudo useradd -m -p xxxx -s /bin/bash $user
