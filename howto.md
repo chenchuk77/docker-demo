@@ -42,10 +42,16 @@ ssh -i dev_access_key.pem ubuntu@54.194.95.172
 ubuntu@ip-10-29-16-253:~$ sudo -i
 root@ip-10-29-16-253:~# sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 root@ip-10-29-16-253:~# systemctl restart sshd.service
+```
 
-
+4. Clone the repo into the new server. run script to add users
 
 ```
+root@ip-10-29-16-253:~# git clone https://github.com/chenchuk77/docker-demo.git
+
+ss
+```
+
 #ssh to server and enable password access via ssh
 
 
