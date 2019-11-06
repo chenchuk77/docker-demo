@@ -33,6 +33,7 @@ aws ec2 describe-instances \
     --output text
 ### outputs ip, assuming 54.194.95.172 ###
 ```
+
 3. Login to the instance with the key specified upon creation and enable password access for all users (its disabled by default)
 ```
 ssh -i dev_access_key.pem ubuntu@54.194.95.172
@@ -40,6 +41,20 @@ ubuntu@ip-10-29-16-253:~$ sudo -i
 root@ip-10-29-16-253:~# sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 root@ip-10-29-16-253:~# systemctl restart sshd.service
 ```
+
+### Setup [docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) host
+```
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+sudo usermod -aG docker ${USER}
+```
+
 ### Creating users for accessing docker host
 1. Clone the repo into the new server. run script to add users
 ```

@@ -12,5 +12,7 @@ for user in "$@"; do
   echo "creating user: $user"
   sudo useradd -m -p xxxx -s /bin/bash $user
   echo "$user:1234" | chpasswd
+  usermod -aG sudo $user
+  usermod -aG docker $user
 done
 echo "done."
