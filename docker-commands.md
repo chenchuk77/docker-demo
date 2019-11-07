@@ -39,7 +39,17 @@ bob@ip-10-29-16-253:~/docker-demo/web-server$ docker stop my-busybox-container
 bob@ip-10-29-16-253:~/docker-demo/web-server$ docker rm 235e
 ```
 
-### More commands
+List docker images
+```
+bob@ip-10-29-16-253:~/docker-demo/web-server$ docker images
+REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
+zoo-unlimited                  latest              aeb656670b99        6 weeks ago         145MB
+wurstmeister/kafka             2.12-2.3.0          988f4a6ca13c        3 months ago        421MB
+<none>                         <none>              497edd01622a        9 months ago        725MB
+```
+
+
+### Advanced commands
 Stop anf kill all containers
 ```
 $ docker ps -aq
