@@ -1,4 +1,5 @@
 ## Starting JMeter deployment
+Example taken from [vinsguru](https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/)
 
 ### building the docker images
 1. Build a base docker image (common for all jmeter nodes)
