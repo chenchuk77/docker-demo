@@ -41,6 +41,8 @@ bob@ip-10-29-16-253:~/docker-demo/web-server$ docker rm 235e
 
 ### More commands
 Stop anf kill all containers
+
+docker ps -aq | xargs docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}'
 ```
 $ docker ps -aq
 770bcfc780ec
