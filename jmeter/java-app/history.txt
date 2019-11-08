@@ -1,0 +1,410 @@
+    1  pytunnel-dev39 
+    2  ip a 
+    3  curl ifconfig.io
+    4  pytunnel-dev39 
+    5  pytunnel-ssh-work 
+    6  pytunnel-dev39 
+    7  pytunnel-work 
+    8  ll
+    9  scp 888.json denis@18.202.119.230:~
+   10  ssh denis@18.202.119.230
+   11  ssh ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no denis@18.202.119.230
+   12  ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no denis@18.202.119.230
+   13  history 
+   14  ssh denis:12341234@18.202.119.230
+   15  ssh -o PubkeyAuthentication=no denis:12341234@18.202.119.230
+   16  ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no denis:12341234@18.202.119.230
+   17  ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no denis:@18.202.119.230
+   18  sudo adduser denis
+   19  su - denis 
+   20  ip a
+   21  curl ifconfig.io
+   22  ll /home/denis/
+   23  date
+   24  ll /home/denis/
+   25  cp /home/denis/repo.tgz /home/denis/xxx.tgz
+   26  sudo cp /home/denis/repo.tgz /home/denis/xxx.tgz
+   27  ll /home/denis/
+   28  ssh root@165.22.73.237
+   29  pytunnel-dev39 
+   30  cd ..
+   31  mkdir docker-demo
+   32  cd docker-demo/
+   33  git init 
+   34  echo "first commit" > README.md
+   35  git status 
+   36  git add README.md 
+   37  git status 
+   38  git commit -m "first commit"
+   39  git log
+   40  git remote add origin https://github.com/chenchuk77/docker-demo.git
+   41  git remote -v
+   42  git push 
+   43  git push -u origin master 
+   44  git status 
+   45  cat > howto
+   46  vim howto 
+   47  cat howto 
+   48  vim howto 
+   49  cat howto 
+   50  vim howto 
+   51  mv howto howto.md
+   52  vim howto.md 
+   53  ls -lstr
+   54  ll
+   55  cat > make-users.sh
+   56  chmod +x make-users.sh 
+   57  ls -lstr
+   58  git status 
+   59  git add howto.md make-users.sh 
+   60  git commit -m "adding script to create users"
+   61  git status 
+   62  git pu
+   63  git push 
+   64  vim howto.md 
+   65  vim make-users.sh 
+   66  git status 
+   67  git add howto.md make-users.sh
+   68  git commit -m "change script to accept user as args"
+   69  git push 
+   70  vim howto.md 
+   71  git status 
+   72  git add oh
+   73  git add howto.md 
+   74  git commit -m "adding instructions to setup a vm, setup sshd, create users."
+   75  git push 
+   76  vim howto.md
+   77  ll
+   78  mv howto.md setup-host.md
+   79  vim setup-host.md
+   80  git status 
+   81  git add setup-host.md howto.md
+   82  git status 
+   83  git commit -m "make seperate file for host setup"
+   84  ls -lstr
+   85  vim setup-host.md 
+   86  cp setup-host.md users-login.md
+   87  vim users-login.md 
+   88  vim make-users.sh 
+   89  vim setup-host.md 
+   90  lsb_release -d
+   91  vim setup-host.md 
+   92  vim make-users.sh 
+   93  git status 
+   94  mv setup-host.md host-setup.md
+   95  git add users-login.md 
+   96  git sttau
+   97  git status 
+   98  git add host-setup.md 
+   99  git status 
+  100  git add make-users.sh setup-host.md 
+  101  git status 
+  102  git commit -m "adding docker installation steps."
+  103  git push 
+  104  cat host-setup.md 
+  105  vim make-users.sh 
+  106  git status 
+  107  git add make-users.sh 
+  108  git commit -m "checking args in user creation script."
+  109  git push 
+  110  vim users-login.md 
+  111  mv users-login.md docker-session.md
+  112  vim docker-session.md 
+  113  git status 
+  114  git add docker-session.md users-login.md 
+  115  git status 
+  116  git commit -m "add docker basic commands"
+  117  git push 
+  118  mkdir web-server
+  119  cd web-server/
+  120  # sudo docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
+  121  mkdir htdocs
+  122  cd htdocs/
+  123  cat > index.html
+  124  vim index.html 
+  125  ll
+  126  cd ..
+  127  readlink -f htdocs/
+  128  -v $(readlink -f htdocs)/:/usr/local/apache2/htdocs/
+  129  history 
+  130  ##docker run -d --name web -p 8090:80 -v $(readlink -f htdocs)/:/usr/local/apache2/htdocs/ httpd:2.4
+  131  ll
+  132  cat > start-webserver.md
+  133  git status 
+  134  cd ..
+  135  git status 
+  136  git add web-server/
+  137  ls -lstr
+  138  ll web-server/
+  139  git status 
+  140  git commit -m "adding folder for web-server."
+  141  git push 
+  142  cd ..
+  143  cd docker-demo/
+  144  ll
+  145  vim docker-session.md 
+  146  vim web-server/start-webserver.md 
+  147  ls -lstr
+  148  git status 
+  149  git add docker-session.md web-server/start-webserver.md
+  150  git commit -m "working web server"
+  151  git push 
+  152  grep -R 54
+  153  grep -R 54.
+  154  grep -R 54\.
+  155  grep -R 194
+  156  ll
+  157  mkdir jmeter
+  158  cd jmeter/
+  159  cat > Dockerfile
+  160  vim Dockerfile 
+  161  cat > howto
+  162  l
+  163  ll
+  164  docker build -t vinsdocker/jmbase
+  165  docker build -t vinsdocker/jmbase .
+  166  cat Dockerfile 
+  167  mkdir plugins
+  168  mv plugins/ jmeter-plugins
+  169  mkdir sample-test
+  170  ls -lstr
+  171  cat ~/Downloads/
+  172  cp ~/Downloads/JMeterPlugins-Standard-1.4.0.zip .
+  173  ll
+  174  unzip JMeterPlugins-Standard-1.4.0.zip 
+  175  ll
+  176  ll lib/
+  177  mv lib/ jmeter-plugins/
+  178  ll
+  179  docker build -t vinsdocker/jmbase .
+  180  ll
+  181  cat LICENSE 
+  182  cat LICENSE  | less
+  183  ll
+  184  cat README 
+  185  ll
+  186  mv JMeterPlugins-Standard-1.4.0.zip ~/Downloads/
+  187  ll
+  188  rm LICENSE README 
+  189  ll
+  190  mkdir jmeter-master
+  191  cd jmeter-master/
+  192  cat > Dockerfile
+  193  docker build -t vinsdocker/jmeter-master .
+  194  cd ../
+  195  mkdir jmeter-slave
+  196  cd jmeter-slave/
+  197  cat > Dockerfile
+  198  docker build -t vinsdocker/jmeter-slave .
+  199  sudo docker run -dit --name jmeter-slave01 vinsdocker/jmeter-slave /bin/bash
+  200  docker run -dit --name jmeter-slave01 vinsdocker/jmeter-slave /bin/bash
+  201  docker ps
+  202  docker run -dit --name jmeter-slave02 vinsdocker/jmeter-slave /bin/bash
+  203  docker run -dit --name jmeter-slave03 vinsdocker/jmeter-slave /bin/bash
+  204  docker run -dit --name jmeter-master vinsdocker/jmeter-master /bin/bash
+  205  docker ps
+  206  ls -lstr
+  207  cd ..
+  208  ll
+  209  cp ../web-server/start-webserver.md ./start-jmeter.md
+  210  vim start-jmeter.md 
+  211  history 
+  212  vim start-jmeter.md 
+  213  ls -lstr
+  214  git status 
+  215  sudo docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(sudo docker ps -a -q)
+  216  docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(sudo docker ps -a -q)
+  217  docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(docker ps -a -q)
+  218  docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}'
+  219  docker ps -a -q
+  220  docker ps
+  221  docker exec -ti jmeter-slave01 /bin/bash
+  222  docker exec -ti jmeter-master /bin/bash
+  223  docker pull vinsdocker/jmserver
+  224  docker run -dit --name jmeter-temp vinsdocker/jmserver /bin/bash
+  225  docker exec -ti jmeter-temp /bin/bash
+  226  ll
+  227  cd sample-test/
+  228  cat > sample-test.jmx
+  229  ll
+  230  cd ..
+  231  ll
+  232  docker ps
+  233  docker ps 
+  234  docker ps | awk '{print $1}'
+  235  docker ps | awk 'BEGIN {print $1}'
+  236  docker ps | awk '{print $1}' | grep -v CON
+  237  docker ps | awk '{print $1}' | grep -v CON | xargs docker stop | xargs docker rm
+  238  docker ps
+  239  docker build -t vinsdocker/jmbase .
+  240  cd jmeter-master/
+  241  docker build -t vinsdocker/jmeter-master .
+  242  cd ../jmeter-slave/
+  243  docker build -t vinsdocker/jmeter-slave .
+  244  cd ..
+  245  docker run -dit --name jmeter-slave01 vinsdocker/jmeter-slave /bin/bash
+  246  docker run -dit --name jmeter-slave02 vinsdocker/jmeter-slave /bin/bash
+  247  docker run -dit --name jmeter-slave03 vinsdocker/jmeter-slave /bin/bash
+  248  docker run -dit --name jmeter-master vinsdocker/jmeter-master /bin/bash
+  249  docker exec -i jmeter-master sh -c 'cat > /jmeter/apache-jmeter-3.3/bin/docker-test.jmx' < docker-test.jmx
+  250  docker exec -ti jmeter-master /bin/bash
+  251  docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(docker ps -aq | grep jmeter)
+  252  ###docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(docker ps -aq | awk 'FNR==1 {pritnt $1}'grep jmeter)
+  253  docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(docker ps -aq | awk 'FNR==1 {pritnt $1}')
+  254  docker ps -aq 
+  255  docker ps -aq | awk 'FNR==1 {pritnt $1}'
+  256  docker ps -aq | awk 'FNR == 1 {pritnt $1}'
+  257  docker ps -aq | awk 'FNR == 1 /{pritnt $1}'
+  258  docker ps -aq | awk 'FNR == 1 && {pritnt $1}'
+  259  docker inspect jmeter-master 
+  260  docker inspect jmeter-master --format {{ .IPAddress}}
+  261  docker inspect  --format {{ .IPAddress}} jmeter-master/
+  262  docker inspect  --format {{ .IPAddress}} jmeter-master
+  263  docker inspect  --format '{{ .IPAddress}}' jmeter-master
+  264  docker inspect  --format '{{ .IPAddress }}' jmeter-master
+  265  docker inspect  --format '{{ IPAddress }}' jmeter-master
+  266  docker inspect  --format '{{ NetworkSettings.IPAddress }}' jmeter-master
+  267  docker inspect --help
+  268  docker ps
+  269  $(docker ps -aq)
+  270  docker ps -aq
+  271  docker ps -aq | xargs docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}'
+  272  history 
+  273  vim ../docker-session.md 
+  274  git status 
+  275  history 
+  276  docker exec -ti jmeter-master /bin/bash
+  277  docker ps -aq | xargs docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}'
+  278  docker exec -ti jmeter-master /bin/bash
+  279  git status 
+  280  git add ./
+  281  git status 
+  282  git add ../docker-session.md 
+  283  git commit -m "adding jmeter example of 4 nodes using raw docker."
+  284  git push 
+  285  git pull 
+  286  git status 
+  287  git push 
+  288  ll ..
+  289  vim ../docker-commands.md 
+  290  ls -lstr
+  291  cat howto 
+  292  vim start-jmeter.md 
+  293  git status 
+  294  git add start-jmeter.md 
+  295  ll
+  296  cat howto 
+  297  rm howto 
+  298  ls -lstr
+  299  git status 
+  300  git add howto start-jmeter.md 
+  301  git status 
+  302  git commit -m "remove unnecessary files."
+  303  git push 
+  304  ls -lstr
+  305  git pull 
+  306  ll
+  307  mkdir system-metrics
+  308  cd system-metrics/
+  309  cat > docker-compose.yml
+  310  ls -lstr
+  311  vim docker-compose.yml 
+  312  docker network create monitoring
+  313  docker volume create grafana-volume
+  314  docker volume create influxdb-volume
+  315  docker network ls
+  316  docker volume ls
+  317  cat > influx
+  318  docker run --rm   -e INFLUXDB_DB=telegraf -e INFLUXDB_ADMIN_ENABLED=true   -e INFLUXDB_ADMIN_USER=admin   -e INFLUXDB_ADMIN_PASSWORD=supersecretpassword   -e INFLUXDB_USER=telegraf -e INFLUXDB_USER_PASSWORD=secretpassword   -v influxdb-volume:/var/lib/influxdb   influxdb /init-influxdb.sh
+  319  docker-compose up -d
+  320  docker ps
+  321  cat docker-compose.yml 
+  322  cd ..
+  323  mkdir java-app
+  324  cd java-app/
+  325  cat > SimpleClock.java
+  326  vim SimpleClock.java 
+  327  javac SimpleClock.java 
+  328  sed -i 's/poblic/public/g' SimpleClock.java 
+  329  javac SimpleClock.java 
+  330  ls -lsrt
+  331  java -cp . SimpleClock 
+  332  vim SimpleClock.java 
+  333  javac SimpleClock.java 
+  334  vim SimpleClock.java 
+  335  javac SimpleClock.java 
+  336  java -cp . SimpleClock 
+  337  history 
+  338  cat > howto
+  339  docker ps
+  340  docker exec -ti influxdb env
+  341  vim SimpleClock.java 
+  342  javac SimpleClock.java 
+  343  java -cp . SimpleClock 
+  344  env | grep HOSTNAME
+  345  hostname
+  346  HOSTNAME=me
+  347  java -cp . SimpleClock 
+  348  export HOSTNAME=me
+  349  java -cp . SimpleClock 
+  350  ll
+  351  cat howto 
+  352  vim howto 
+  353  ls -lstr
+  354  vim SimpleClock.java 
+  355  javac SimpleClock.java 
+  356  java -cp . SimpleClock 
+  357  cat SimpleClock.
+  358  cat SimpleClock.java 
+  359  vim SimpleClock.java 
+  360  ls -lstr
+  361  javac SimpleClock.java 
+  362  ls -lstr
+  363  java -cp . SimpleClock 
+  364  ls -lstr
+  365  cat > Dockerfile
+  366  vim Dockerfile 
+  367  ls -lstr
+  368  cat Dockerfile 
+  369  docker build -t java-app .
+  370  docker run -ti --rm --name java-app-container java-app
+  371  vim ../../docker-commands.md 
+  372  docker run -ti --rm --name java-app-container java-app
+  373  ls -lstr
+  374  cat Dockerfile 
+  375  cat Dockerfile > Dockerfile2
+  376  ls -lstr
+  377  vim Dockerfile2
+  378  docker build -t java-app-8 -f Dockerfile2
+  379  docker build -t java-app-8 - < Dockerfile2
+  380  vim Dockerfile2 
+  381  docker build -t java-app-8 - < Dockerfile2
+  382  vim Dockerfile2 
+  383  docker build -t java-app-8 - < Dockerfile2
+  384  vim Dockerfile2 
+  385  docker build -t java-app-8 - < Dockerfile2
+  386  ll
+  387  cat Dockerfile2 
+  388  docker build --no-cache -t java-app-8 - < Dockerfile2
+  389  ls -lstr
+  390  mkdir v7
+  391  cp Dockerfile SimpleClock.java v7
+  392  mkdir v8
+  393  cp Dockerfile SimpleClock.java v8/
+  394  cd v7
+  395  ls -lstr
+  396  docker build -t java-app .
+  397  docker build -t java-app:7.0 .
+  398  cd ../v8
+  399  vim Dockerfile 
+  400  ls -lstr
+  401  docker build -t java-app:7.0 .
+  402  cd -
+  403  docker build -t java-app:7.0 .
+  404  cd -
+  405  docker build -t java-app:8.0 .
+  406  docker images | grep app
+  407  docker run -ti --rm --name java-app-container java-app:7.0
+  408  docker run -ti --rm --name java-app-container java-app:8.0
+  409  history 
+  410  history > history.txt

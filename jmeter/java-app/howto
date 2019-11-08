@@ -1,0 +1,9 @@
+
+compile:
+javac SimpleClock.java
+
+run:
+ava -cp . SimpleClock
+
+export HOSTNAME on non-docker !
+
