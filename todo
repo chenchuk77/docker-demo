@@ -1,0 +1,33 @@
+* docker main concepts
+- immutability
+- salf contained / dependencies
+- lightweight
+- fast
+- small footprint
+- layers
+- isolation
+
+* Dockerfile best practices:
+- order matters
+- reduce number of commands (cache)
+- use official images as possible
+- use specific tags (avoid latest ?)
+- 
+
+* Best practices
+- Don’t store data in containers
+- Don’t use a single layer image
+- Don’t run more than one process in a single container
+- Don’t store credentials in the image. Use environment variables
+- Don’t rely on IP addresses
+
+Prefer minimal base images
+Least privileged user
+Use COPY instead of ADD
+
+
+
+
+First: Containers are immutable – The OS, library versions, configurations, folders, and application are all wrapped inside the container. You guarantee that the same image that was tested in QA will reach the production environment with the same behaviour.
+Second: Containers are lightweight – The memory footprint of a container is small. Instead of hundreds or thousands of MBs, the container will only allocate the memory for the main process.
+Third: Containers are fast – You can start a container as fast as a typical linux process takes to start. Instead of minutes, you can start a new container in few seconds.
