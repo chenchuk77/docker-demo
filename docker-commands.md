@@ -61,5 +61,8 @@ bob@ip-10-29-16-253:~/docker-demo/web-server$ docker ps -aq | xargs docker stop 
 770bcfc780ec
 3b4141c3a4ec
 
+# remove container so can be recreated with same name
+docker run -ti --rm --name java-app-container java-app
+
 ```
 
