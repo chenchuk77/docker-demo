@@ -1,1 +1,26 @@
+
+
+# jupyter notebooks ready as docker containers
+
+
+# datascience environment
+# [Python, Julia, R]
+docker run --rm -d -p 8888:8888 --name jupyter-data \
+       --env JUPYTER_TOKEN=0000 \
+       --volume $(readlink -f notebooks)/:/home/jovyan/work \
+       vhtec/jupyter-docker:latest
+
+
+# BeakerX includes many of the languages that run on the Java Virtual Machine
+# [JAVA, Clojure, Scala, Groovy, Kotlin]
+docker run --rm -d -p 8887:8888 --name jupyter-java \
+       --env JUPYTER_TOKEN=0000 \
+       --volume $(readlink -f notebooks)/:/home/beakerx/work \
+       beakerx/beakerx:latest
+
+
+
+jupyter/datascience-notebook:latest
+
 https://www.thesoftwareguild.com/blog/environment-magic-with-jupyter-and-docker/
+
