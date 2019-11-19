@@ -1,1 +1,35 @@
-docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=1234qwer -d mysql:latest
+#docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=1234qwer -d mysql:latest
+
+
+git clone https://github.com/mysql/mysql-docker.git
+cd mysql-docker
+cd 5.7
+
+# build the image
+docker build -t chenchuk/mysql57:1.0 .
+
+# start mysql
+docker run --name mysql-srv --rm -d -p 3306:3306 chenchuk/mysql57:1.0
+
+# to stop and delete container
+docker stop mysql-srv; docker rm mysql-srv
+
+# check logs to see the auto-generated root password
+docker logs mysql-srv
+
+# execute mysql from inside the container (only root/localhost is allowed)
+docker exec -ti mysql-srv mysql -uroot -p
+
+# enable remote access from docker host
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+UPDATE USER set host = '%' WHERE user = 'root';
+FLUSH PRIVILGED;
+
+# login via the docker host
+mysql -h127.0.0.1 -uroot -proot
+
+# inject a sample database
+git clone https://github.com/datacharmer/test_db.git
+cd test_db
+mysql -h127.0.0.1 -uroot -proot < employees.sql
+
